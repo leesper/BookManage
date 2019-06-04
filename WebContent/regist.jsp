@@ -4,32 +4,43 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<link href="css/regist.css" rel="stylesheet">
-		<title>图书后台管理登录页面</title>
+		<title>注册界面</title>
 	</head>
 	<body>
-		<div class="container">
-			<h1>用户注册</h1>
-			<form class="sign-up">
-        		<label for="inputUserName" class="sr-only">用户名</label>
-        		<input type="text" id="inputUserName" class="form-control" placeholder="用户名" required autofocus>
-        		
-        		<label for="inputPassword" class="sr-only">密码</label>
-        		<input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
-        		
-        		<label for="confirmPassword" class="sr-only">确认密码</label>
-        		<input type="password" id="confirmPassword" class="form-control" placeholder="确认密码" required>
-        		
-        		<label for="inputPhone" class="sr-only">手机号码</label>
-        		<input type="tel" id="inputPhone" class="form-control" placeholder="手机号码" required>
-        		
-        		<label for="inputEmail" class="sr-only">邮箱</label>
-        		<input type="email" id="inputEmail" class="form-control" placeholder="电子邮箱" required>
-        		<button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
-        		<button class="btn btn-lg btn-primary btn-block" type="reset">重置</button>
-      		</form>
-    	</div> <!-- /container -->
+		<center>
+		<h1>用户注册</h1>
+		<form action="#" method="post">
+			<table width="400px" cellspacing="0px" cellpadding="0px" border="1px">
+				<tr>
+					<td>用户名</td>
+					<td><input type="text" name="username" placeholder="用户名为3-12位字母数字或下划线组合" ></td>
+				</tr>
+				<tr>
+					<td>密&nbsp;码</td>
+					<td><input type="password" name="password" placeholder="密码长度为6-12位的纯数字"  id="password"></td>
+				</tr>
+				<tr>
+					<td>确认密码</td>
+					<td><input type="password" name="checkPWD" placeholder="密码长度为6-12位的纯数字" "></td>
+				</tr>
+				<tr>
+					<td>手机号码</td>
+					<td><input type="text" name="phone" placeholder="请输入正确的手机号码格式" ></td>
+				</tr>
+				<tr>
+					<td>邮箱</td>
+					<td><input type="email" name="email" placeholder="请输入正确邮箱格式" required="required"></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align:center">
+						<input type="submit" value="注册">
+						<input type="reset" value="重置">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</center>
+	
+		
 	</body>
 </html>
