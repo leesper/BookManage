@@ -39,8 +39,48 @@
 				</tr>
 			</table>
 		</form>
-	</center>
-	
-		
+		</center>	
+		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+			$("input[name='username']").blur(function() {
+				let regexUser = /^[0-9a-zA-Z_]{3,12}$/;
+				let username = $(this).val();
+				if (!regexUser.test(username)) {
+					alert("用户名为3-12位字母数字或下划线组合");
+				} 
+			});
+			
+			$("input[name='password']").blur(function() {
+				let regexPasswd = /^[0-9]{6,12}$/;
+				let passwd = $(this).val();
+				if (!regexPasswd.test(passwd)) {
+					alert("密码长度为6-12位的纯数字");
+				}
+			});
+			
+			$("input[name=checkPWD]").blur(function() {
+				let passwd = $("input[name='password']").val();
+				let checkPWD = $(this).val();
+				if (passwd !== checkPWD) {
+					alert("两次输入的密码不相同，请重新输入");
+				}
+			});
+			
+			$("input[name='phone']").blur(function() {
+				let regexPhone = /^1[34578]\d{9}$/;
+				let phone = $(this).val();
+				if (!regexPhone.test(phone)) {
+					alert("请输入正确的手机号码格式");
+				}
+			});
+			
+			$("input[name='email']").blur(function() {
+				let regexEmail = /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+				let email = $(this).val();
+				if (!regexEmail.test(email)) {
+					alert("请输入正确的邮箱格式");
+				}
+			});
+		</script>
 	</body>
 </html>
