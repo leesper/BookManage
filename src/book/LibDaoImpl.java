@@ -1,6 +1,7 @@
 package book;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -15,21 +16,53 @@ public class LibDaoImpl {
 		books = new ArrayList<>();
 	}
 	
-	public void regist(User user) {}
+	public static void regist(User user) {
+		userDB.add(user);
+	}
 	
-	public int login(String username, String password) { return 0; }
+	public static boolean login(String username, String password) {
+		for (User user : userDB) {
+			if (user.getName().equals(username) && user.getPasswd().equals(password)) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
-	public int isUserExist(String username) { return 0; }
+	public static boolean isUserExist(String username) {
+		for (User user : userDB) {
+			if (user.getName().equals(username)) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
-	public void addBookCatgory(Long id, String catgoryName, String description) {}
+	public static void addBookCatgory(Long id, String categoryName, String description) {
+		Map<String, Object> category = new HashMap<>();
+		category.put("id", id);
+		category.put("categoryName", categoryName);
+		category.put("description", description);
+		categories.add(category);
+	}
 	
-	public List<Map<String, Object>> getAllBookCatgory() {
+	public static List<Map<String, Object>> getAllBookCatgory() {
 		return categories;
 	}
 	
-	public void addBook(Book book){}
+	public static void addBook(Book book) {
+		books.add(book);
+	}
 	
-	public List<Book> getBooksByCondition(String bookID, String bookName, String catgoryName) {
-		return null;
+	public static List<Book> getBooksByCondition(String bookID, String bookName, String categoryName) {
+		List<Book> booksFound = new ArrayList<>();
+		for (Book book : books) {
+			if (bookID != null && bookID.equals(book.getID()) && 
+					bookName != null && bookName.equals(book.getName()) &&
+					categoryName != null && categoryName.equals(book.getCategory())) {
+				booksFound.add(book);
+			}
+		}
+		return booksFound;
 	}
 }
