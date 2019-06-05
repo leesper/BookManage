@@ -9,7 +9,7 @@
 	<body>
 		<center>
 			<h1>登录 | <a href="/BookManage/regist.jsp">注册</a></h1>
-			<form action="#" method="post">
+			<form action="/BookManage/LoginServlet" method="post">
 				<table width="350px" cellspacing="0px" cellpadding="0px" border="1px">
 					<tr>
 						<td>用户名</td>
@@ -29,4 +29,7 @@
 			</form>
 		</center>
 	</body>
+	<script type="text/javascript">
+		
+	</script>
 </html>

@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import book.LibServiceImpl;
+import book.User;
+
 /**
  * Servlet implementation class RegistServlet
  */
@@ -27,13 +30,21 @@ public class RegistServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("regist");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String checkPWD = request.getParameter("checkPWD");
 		String phone = request.getParameter("phone");
 		String email = request.getParameter("email");
-		System.out.println(username+password+checkPWD+phone+email);
+		
+		if (LibServiceImpl.isUserExist(username)) {
+			response.sendRedirect(request.getContextPath() + "/regist.jsp?exists=1");
+		} else {
+			if (password.equals(checkPWD)) {
+				User user = new User(username, password, phone, email);
+				LibServiceImpl.regist(user);
+				response.sendRedirect(request.getContextPath() + "/index.jsp");
+			}
+		}
 	}
 
 }

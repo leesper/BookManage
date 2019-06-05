@@ -2,6 +2,9 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+	<%
+	String exists = request.getParameter("exists");
+	%>
 	<head>
 		<meta charset="UTF-8">
 		<title>注册界面</title>
@@ -81,6 +84,10 @@
 					alert("请输入正确的邮箱格式");
 				}
 			});
+			let exists = <%=exists %>;
+			if (exists === 1) {
+				alert("用户名已存在，请重新注册");
+			}
 		</script>
 	</body>
 </html>
