@@ -2,6 +2,9 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+	<%
+	String loginSuccess = request.getParameter("loginSuccess");
+	%>
 	<head>
 		<meta charset="UTF-8">
 		<title>图书后台管理登录页面</title>
@@ -30,6 +33,9 @@
 		</center>
 	</body>
 	<script type="text/javascript">
-		
+		let loginSuccess = <%= loginSuccess %>;
+		if (loginSuccess === 0) {
+			alert("用户名或密码错误");
+		}
 	</script>
 </html>

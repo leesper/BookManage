@@ -9,7 +9,7 @@
 <body>
 <center>
 	<h1>图书分类添加</h1>
-	<form action="/BookManage/CatgoryServlet" method="post">
+	<form action="/BookManage/CategoryServlet" method="post">
 		<table width="400px" cellspacing="0px" cellpadding="0px" border="1px">
 			<tr>
 				<td>分类ID</td>
@@ -17,7 +17,7 @@
 			</tr>
 			<tr>
 				<td>名&nbsp;字</td>
-				<td><input type="text" name="catgoryName"></td>
+				<td><input type="text" name="categoryName"></td>
 			</tr>
 			<tr>
 				<td>描&nbsp;述</td>

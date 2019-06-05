@@ -38,7 +38,7 @@ public class LibDaoImpl {
 		return false;
 	}
 	
-	public static void addBookCatgory(Long id, String categoryName, String description) {
+	public static void addBookCategory(Long id, String categoryName, String description) {
 		Map<String, Object> category = new HashMap<>();
 		category.put("id", id);
 		category.put("categoryName", categoryName);

@@ -17,19 +17,19 @@ public class LibServiceImpl {
 		return LibDaoImpl.isUserExist(username);
 	}
 	
-	public void addBookCatgory(Long id, String categoryName, String description) {
-		LibDaoImpl.addBookCatgory(id, categoryName, description);
+	public static void addBookCategory(Long id, String categoryName, String description) {
+		LibDaoImpl.addBookCategory(id, categoryName, description);
 	}
 	
-	public List<Map<String, Object>> getAllBookCatgory() {
+	public static List<Map<String, Object>> getAllBookCatgory() {
 		return LibDaoImpl.getAllBookCatgory();
 	}
 	
-	public void addBook(Book book) {
+	public static void addBook(Book book) {
 		LibDaoImpl.addBook(book);
 	}
 	
-	public List<Book> getBooksByCondition(String bookID, String bookName, String categoryName) {
+	public static List<Book> getBooksByCondition(String bookID, String bookName, String categoryName) {
 		return LibDaoImpl.getBooksByCondition(bookID, bookName, categoryName);
 	}
 }

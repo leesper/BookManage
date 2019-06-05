@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.List,book.LibServiceImpl,java.util.Map" %>
+<%
+	List<Map<String, Object>> categories = LibServiceImpl.getAllBookCatgory();
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +28,9 @@
 					<td>图书分类</td>
 					<td>
 						<select name="catgoryName">
-							<option value=""></option>
+							<c:forEach items="${categories} var="category">
+								<option value=""><c:out value="${category.get('categoryName')}"/></option>
+							</c:forEach>
 						</select>
 					</td>
 				</tr>
