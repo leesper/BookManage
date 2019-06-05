@@ -9,7 +9,7 @@
 	<body>
 		<center>
 		<h1>用户注册</h1>
-		<form action="#" method="post">
+		<form action="/BookManage/RegistServlet" method="post">
 			<table width="400px" cellspacing="0px" cellpadding="0px" border="1px">
 				<tr>
 					<td>用户名</td>
